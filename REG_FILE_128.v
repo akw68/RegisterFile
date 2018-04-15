@@ -250,6 +250,52 @@ output we5_o;
  wire [SRAM_DEPTH/2-1:0]					 decoded_addr1_5wr;
  
  
+ //******************************************************************
+ 
+ wire [SRAM_DEPTH-1:0]					 padded_addr0_0;
+ wire [SRAM_DEPTH-1:0]					 padded_addr0_1;
+ wire [SRAM_DEPTH-1:0] 					 padded_addr0_2;
+ wire [SRAM_DEPTH-1:0]					 padded_addr0_3;
+ wire [SRAM_DEPTH-1:0]					 padded_addr0_4;
+ wire [SRAM_DEPTH-1:0]					 padded_addr0_5;
+ wire [SRAM_DEPTH-1:0]					 padded_addr0_6;
+ wire [SRAM_DEPTH-1:0]					 padded_addr0_7;
+ wire [SRAM_DEPTH-1:0]					 padded_addr0_8;
+ wire [SRAM_DEPTH-1:0]					 padded_addr0_9;
+ wire [SRAM_DEPTH-1:0]					 padded_addr0_10;
+ wire [SRAM_DEPTH-1:0]					 padded_addr0_11;
+ 
+ wire [SRAM_DEPTH-1:0]					 padded_addr1_0;
+ wire [SRAM_DEPTH-1:0]					 padded_addr1_1;
+ wire [SRAM_DEPTH-1:0]					 padded_addr1_2;
+ wire [SRAM_DEPTH-1:0]					 padded_addr1_3;
+ wire [SRAM_DEPTH-1:0]					 padded_addr1_4;
+ wire [SRAM_DEPTH-1:0]					 padded_addr1_5;
+ wire [SRAM_DEPTH-1:0]					 padded_addr1_6;
+ wire [SRAM_DEPTH-1:0]					 padded_addr1_7;
+ wire [SRAM_DEPTH-1:0]					 padded_addr1_8;
+ wire [SRAM_DEPTH-1:0]					 padded_addr1_9;
+ wire [SRAM_DEPTH-1:0]					 padded_addr1_10;
+ wire [SRAM_DEPTH-1:0]					 padded_addr1_11;
+ 
+ 
+ //************************************************************************
+ 
+ wire [SRAM_DEPTH-1:0]					 padded_addr0_0wr;
+ wire [SRAM_DEPTH-1:0]					 padded_addr0_1wr;
+ wire [SRAM_DEPTH-1:0] 					 padded_addr0_2wr;
+ wire [SRAM_DEPTH-1:0]					 padded_addr0_3wr;
+ wire [SRAM_DEPTH-1:0]					 padded_addr0_4wr;
+ wire [SRAM_DEPTH-1:0]					 padded_addr0_5wr;
+ 
+ wire [SRAM_DEPTH-1:0]					 padded_addr1_0wr;
+ wire [SRAM_DEPTH-1:0]					 padded_addr1_1wr;
+ wire [SRAM_DEPTH-1:0]					 padded_addr1_2wr;
+ wire [SRAM_DEPTH-1:0]					 padded_addr1_3wr;
+ wire [SRAM_DEPTH-1:0]					 padded_addr1_4wr;
+ wire [SRAM_DEPTH-1:0]					 padded_addr1_5wr;
+ 
+ //************************************************************************
  
 //****************WRITE ENABLE ASSIGNMENT STATEMENTS********************************
 assign we0_0_i = (we0_i & ~addr0wr_i[SRAM_INDEX-1]);
@@ -293,29 +339,76 @@ assign data11_o = addr11_i[SRAM_INDEX-1] ? data1_11 : data0_11;
 
 
 
+//********************PADDED DECODED ADDRESS****************************************
+assign padded_addr1_0 = {decoded_addr1_0, 64'b0};
+assign padded_addr1_1 = {decoded_addr1_1, 64'b0};
+assign padded_addr1_2 = {decoded_addr1_2, 64'b0};
+assign padded_addr1_3 = {decoded_addr1_3, 64'b0};
+assign padded_addr1_4 = {decoded_addr1_4, 64'b0};
+assign padded_addr1_5 = {decoded_addr1_5, 64'b0};
+assign padded_addr1_6 = {decoded_addr1_6, 64'b0};
+assign padded_addr1_7 = {decoded_addr1_7, 64'b0};
+assign padded_addr1_8 = {decoded_addr1_8, 64'b0};
+assign padded_addr1_9 = {decoded_addr1_9, 64'b0};
+assign padded_addr1_10 = {decoded_addr1_10, 64'b0};
+assign padded_addr1_11 = {decoded_addr1_11, 64'b0};
+
+
+
+assign padded_addr0_0 = {64'b0, decoded_addr0_0};
+assign padded_addr0_1 = {64'b0, decoded_addr0_1};
+assign padded_addr0_2 = {64'b0, decoded_addr0_2};
+assign padded_addr0_3 = {64'b0, decoded_addr0_3};
+assign padded_addr0_4 = {64'b0, decoded_addr0_4};
+assign padded_addr0_5 = {64'b0, decoded_addr0_5};
+assign padded_addr0_6 = {64'b0, decoded_addr0_6};
+assign padded_addr0_7 = {64'b0, decoded_addr0_7};
+assign padded_addr0_8 = {64'b0, decoded_addr0_8};
+assign padded_addr0_9 = {64'b0, decoded_addr0_9};
+assign padded_addr0_10 = {64'b0, decoded_addr0_10};
+assign padded_addr0_11 = {64'b0, decoded_addr0_11};
+
+//*******************PADDED DECODED WRITE ADDRESSES******************************
+assign padded_addr1_0wr = {decoded_addr1_0wr, 64'b0};
+assign padded_addr1_1wr = {decoded_addr1_1wr, 64'b0};
+assign padded_addr1_2wr = {decoded_addr1_2wr, 64'b0};
+assign padded_addr1_3wr = {decoded_addr1_3wr, 64'b0};
+assign padded_addr1_4wr = {decoded_addr1_4wr, 64'b0};
+assign padded_addr1_5wr = {decoded_addr1_5wr, 64'b0};
+
+
+assign padded_addr0_0wr = {64'b0, decoded_addr0_0wr};
+assign padded_addr0_1wr = {64'b0, decoded_addr0_1wr};
+assign padded_addr0_2wr = {64'b0, decoded_addr0_2wr};
+assign padded_addr0_3wr = {64'b0, decoded_addr0_3wr};
+assign padded_addr0_4wr = {64'b0, decoded_addr0_4wr};
+assign padded_addr0_5wr = {64'b0, decoded_addr0_5wr};
+
+
+
 //******************MUXES FOR DECODED ADDRESS OUTPUTS******************************
-assign decoded_addr0_o = addr0_i[SRAM_INDEX-1] ? {decoded_addr1_0, (SRAM_DEPTH/2)'b0} : {(SRAM_DEPTH/2)'b0, decoded_addr0_0};
-assign decoded_addr1_o = addr1_i[SRAM_INDEX-1] ? {decoded_addr1_1, (SRAM_DEPTH/2)'b0} : {(SRAM_DEPTH/2)'b0, decoded_addr0_1};
-assign decoded_addr2_o = addr2_i[SRAM_INDEX-1] ? {decoded_addr1_2, (SRAM_DEPTH/2)'b0} : {(SRAM_DEPTH/2)'b0, decoded_addr0_2};
-assign decoded_addr3_o = addr3_i[SRAM_INDEX-1] ? {decoded_addr1_3, (SRAM_DEPTH/2)'b0} : {(SRAM_DEPTH/2)'b0, decoded_addr0_3};
-assign decoded_addr4_o = addr4_i[SRAM_INDEX-1] ? {decoded_addr1_4, (SRAM_DEPTH/2)'b0} : {(SRAM_DEPTH/2)'b0, decoded_addr0_4};
-assign decoded_addr5_o = addr5_i[SRAM_INDEX-1] ? {decoded_addr1_5, (SRAM_DEPTH/2)'b0} : {(SRAM_DEPTH/2)'b0, decoded_addr0_5};
-assign decoded_addr6_o = addr6_i[SRAM_INDEX-1] ? {decoded_addr1_6, (SRAM_DEPTH/2)'b0} : {(SRAM_DEPTH/2)'b0, decoded_addr0_6};
-assign decoded_addr7_o = addr7_i[SRAM_INDEX-1] ? {decoded_addr1_7, (SRAM_DEPTH/2)'b0} : {(SRAM_DEPTH/2)'b0, decoded_addr0_7};
-assign decoded_addr8_o = addr8_i[SRAM_INDEX-1] ? {decoded_addr1_8, (SRAM_DEPTH/2)'b0} : {(SRAM_DEPTH/2)'b0, decoded_addr0_8};
-assign decoded_addr9_o = addr9_i[SRAM_INDEX-1] ? {decoded_addr1_9, (SRAM_DEPTH/2)'b0} : {(SRAM_DEPTH/2)'b0, decoded_addr0_9};
-assign decoded_addr10_o = addr10_i[SRAM_INDEX-1] ? {decoded_addr1_10, (SRAM_DEPTH/2)'b0} : {(SRAM_DEPTH/2)'b0, decoded_addr0_10};
-assign decoded_addr11_o = addr11_i[SRAM_INDEX-1] ? {decoded_addr1_11, (SRAM_DEPTH/2)'b0} : {(SRAM_DEPTH/2)'b0, decoded_addr0_11};
+assign decoded_addr0_o = addr0_i[SRAM_INDEX-1] ? padded_addr1_0 : padded_addr0_0;
+assign decoded_addr1_o = addr1_i[SRAM_INDEX-1] ? padded_addr1_1 : padded_addr0_1;
+assign decoded_addr2_o = addr2_i[SRAM_INDEX-1] ? padded_addr1_2 : padded_addr0_2;
+assign decoded_addr3_o = addr3_i[SRAM_INDEX-1] ? padded_addr1_3 : padded_addr0_3;
+assign decoded_addr4_o = addr4_i[SRAM_INDEX-1] ? padded_addr1_4 : padded_addr0_4;
+assign decoded_addr5_o = addr5_i[SRAM_INDEX-1] ? padded_addr1_5 : padded_addr0_5;
+assign decoded_addr6_o = addr6_i[SRAM_INDEX-1] ? padded_addr1_6 : padded_addr0_6;
+assign decoded_addr7_o = addr7_i[SRAM_INDEX-1] ? padded_addr1_7 : padded_addr0_7;
+assign decoded_addr8_o = addr8_i[SRAM_INDEX-1] ? padded_addr1_8 : padded_addr0_8;
+assign decoded_addr9_o = addr9_i[SRAM_INDEX-1] ? padded_addr1_9 : padded_addr0_9;
+assign decoded_addr10_o = addr10_i[SRAM_INDEX-1] ? padded_addr1_10 : padded_addr0_10;
+assign decoded_addr11_o = addr11_i[SRAM_INDEX-1] ? padded_addr1_11 : padded_addr0_11;
 
 
 
 //***************MUXES FOR DECODED WRITE ADDRESS OUTPUTS***************************
-assign decoded_addr0wr_o = addr0wr_i[SRAM_INDEX-1] ? {decoded_addr1_0wr, (SRAM_DEPTH/2)'b0} : {(SRAM_DEPTH/2)'b0, decoded_addr0_0wr};
-assign decoded_addr1wr_o = addr1wr_i[SRAM_INDEX-1] ? {decoded_addr1_1wr, (SRAM_DEPTH/2)'b0} : {(SRAM_DEPTH/2)'b0, decoded_addr0_1wr};
-assign decoded_addr2wr_o = addr2wr_i[SRAM_INDEX-1] ? {decoded_addr1_2wr, (SRAM_DEPTH/2)'b0} : {(SRAM_DEPTH/2)'b0, decoded_addr0_2wr};
-assign decoded_addr3wr_o = addr3wr_i[SRAM_INDEX-1] ? {decoded_addr1_3wr, (SRAM_DEPTH/2)'b0} : {(SRAM_DEPTH/2)'b0, decoded_addr0_3wr};
-assign decoded_addr4wr_o = addr4wr_i[SRAM_INDEX-1] ? {decoded_addr1_4wr, (SRAM_DEPTH/2)'b0} : {(SRAM_DEPTH/2)'b0, decoded_addr0_4wr};
-assign decoded_addr5wr_o = addr5wr_i[SRAM_INDEX-1] ? {decoded_addr1_5wr, (SRAM_DEPTH/2)'b0} : {(SRAM_DEPTH/2)'b0, decoded_addr0_5wr};
+assign decoded_addr0wr_o = addr0wr_i[SRAM_INDEX-1] ? padded_addr1_0wr : padded_addr0_0wr;
+assign decoded_addr1wr_o = addr1wr_i[SRAM_INDEX-1] ? padded_addr1_1wr : padded_addr0_1wr;
+assign decoded_addr2wr_o = addr2wr_i[SRAM_INDEX-1] ? padded_addr1_2wr : padded_addr0_2wr;
+assign decoded_addr3wr_o = addr3wr_i[SRAM_INDEX-1] ? padded_addr1_3wr : padded_addr0_3wr;
+assign decoded_addr4wr_o = addr4wr_i[SRAM_INDEX-1] ? padded_addr1_4wr : padded_addr0_4wr;
+assign decoded_addr5wr_o = addr5wr_i[SRAM_INDEX-1] ? padded_addr1_5wr : padded_addr0_5wr;
  
  
  REG_FILE_64 #(SRAM_DEPTH/2,SRAM_INDEX-1,SRAM_WIDTH) 
@@ -450,3 +543,4 @@ assign decoded_addr5wr_o = addr5wr_i[SRAM_INDEX-1] ? {decoded_addr1_5wr, (SRAM_D
 			 .clk(clk), 
 			 .reset(reset) 
 		);
+endmodule
