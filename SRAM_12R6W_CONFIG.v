@@ -84,7 +84,7 @@ decoded_addr5wr_o,
 /* Parameters */
 parameter SRAM_DEPTH = 16;
 parameter SRAM_INDEX = 4;
-parameter SRAM_WIDTH = 8;
+parameter SRAM_WIDTH = 32;
 
 input clk;
 input reset;
