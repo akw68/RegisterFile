@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : REG_FILE_128
+Version: M-2016.12
+Date   : Tue Apr 17 00:26:34 2018
+****************************************
+
+Library(s) Used:
+
+    saed90nm_typ (File: /home/akw68/RegisterFile/your_library.db)
+
+Number of ports:                        19260
+Number of nets:                         90256
+Number of cells:                        69616
+Number of combinational cells:          65506
+Number of sequential cells:              4096
+Number of macros/black boxes:               0
+Number of buf/inv:                       3302
+Number of references:                       6
+
+Combinational area:             675403.773014
+Buf/Inv area:                    18258.739674
+Noncombinational area:          101921.585938
+Macro/Black Box area:                0.000000
+Net Interconnect area:          234120.788471
+
+Total cell area:                777325.358952
+Total area:                    1011446.147423
+1

@@ -1,0 +1,80 @@
+****************************************
+Report : power
+        -analysis_effort low
+Design : REG_FILE_128
+Version: M-2016.12
+Date   : Mon Apr 16 21:58:18 2018
+****************************************
+
+
+Library(s) Used:
+
+    saed90nm_typ (File: /home/akw68/RegisterFile/your_library.db)
+
+
+Operating Conditions: TYPICAL   Library: saed90nm_typ
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+REG_FILE_128           1000000           saed90nm_typ
+REG_FILE_64_SRAM_DEPTH64_SRAM_INDEX6_SRAM_WIDTH32_0
+                       540000            saed90nm_typ
+REG_FILE_64_SRAM_DEPTH64_SRAM_INDEX6_SRAM_WIDTH32_1
+                       540000            saed90nm_typ
+REG_FILE_32_SRAM_DEPTH32_SRAM_INDEX5_SRAM_WIDTH32_0
+                       280000            saed90nm_typ
+REG_FILE_32_SRAM_DEPTH32_SRAM_INDEX5_SRAM_WIDTH32_3
+                       280000            saed90nm_typ
+SRAM_12R6W_CONFIG_SRAM_DEPTH16_SRAM_INDEX4_SRAM_WIDTH32_0
+                       140000            saed90nm_typ
+SRAM_12R6W_CONFIG_SRAM_DEPTH16_SRAM_INDEX4_SRAM_WIDTH32_7
+                       140000            saed90nm_typ
+SRAM_12R6W_CONFIG_SRAM_DEPTH16_SRAM_INDEX4_SRAM_WIDTH32_6
+                       140000            saed90nm_typ
+REG_FILE_32_SRAM_DEPTH32_SRAM_INDEX5_SRAM_WIDTH32_1
+                       280000            saed90nm_typ
+REG_FILE_32_SRAM_DEPTH32_SRAM_INDEX5_SRAM_WIDTH32_2
+                       280000            saed90nm_typ
+SRAM_12R6W_CONFIG_SRAM_DEPTH16_SRAM_INDEX4_SRAM_WIDTH32_1
+                       140000            saed90nm_typ
+SRAM_12R6W_CONFIG_SRAM_DEPTH16_SRAM_INDEX4_SRAM_WIDTH32_3
+                       140000            saed90nm_typ
+SRAM_12R6W_CONFIG_SRAM_DEPTH16_SRAM_INDEX4_SRAM_WIDTH32_5
+                       140000            saed90nm_typ
+SRAM_12R6W_CONFIG_SRAM_DEPTH16_SRAM_INDEX4_SRAM_WIDTH32_2
+                       140000            saed90nm_typ
+SRAM_12R6W_CONFIG_SRAM_DEPTH16_SRAM_INDEX4_SRAM_WIDTH32_4
+                       140000            saed90nm_typ
+
+
+Global Operating Voltage = 1.2  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+  Cell Internal Power  =  53.2522 mW   (79%)
+  Net Switching Power  =  14.0134 mW   (21%)
+                         ---------
+Total Dynamic Power    =  67.2656 mW  (100%)
+
+Cell Leakage Power     =   3.6590 mW
+
+Information: report_power power group summary does not include estimated clock tree power. (PWR-789)
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register           0.0000            0.0000            0.0000            0.0000  (   0.00%)
+sequential     5.6633e+03           23.6442        5.4431e+08        6.2312e+03  (   8.79%)
+combinational  4.7589e+04        1.3990e+04        3.1147e+09        6.4693e+04  (  91.21%)
+--------------------------------------------------------------------------------------------------
+Total          5.3252e+04 uW     1.4013e+04 uW     3.6590e+09 pW     7.0924e+04 uW

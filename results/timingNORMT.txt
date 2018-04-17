@@ -1,0 +1,75 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : REG_FILE_128
+Version: M-2016.12
+Date   : Tue Apr 17 00:27:14 2018
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: TYPICAL   Library: saed90nm_typ
+Wire Load Model Mode: enclosed
+
+  Startpoint: addr5wr_i[5]
+              (input port)
+  Endpoint: decoded_addr5wr_o[112]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  REG_FILE_128       1000000               saed90nm_typ
+  REG_FILE_64_SRAM_DEPTH64_SRAM_INDEX6_SRAM_WIDTH32_1
+                     540000                saed90nm_typ
+  REG_FILE_32_SRAM_DEPTH32_SRAM_INDEX5_SRAM_WIDTH32_1
+                     280000                saed90nm_typ
+  SRAM_12R6W_CONFIG_SRAM_DEPTH16_SRAM_INDEX4_SRAM_WIDTH32_1
+                     140000                saed90nm_typ
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 f
+  addr5wr_i[5] (in)                                       0.00       0.00 f
+  PhyRegFile1/addr5wr_i[5] (REG_FILE_64_SRAM_DEPTH64_SRAM_INDEX6_SRAM_WIDTH32_1)
+                                                          0.00       0.00 f
+  PhyRegFile1/U344/ZN (INVX0)                             7.58       7.58 r
+  PhyRegFile1/U2/QN (NOR2X0)                              6.66      14.24 f
+  PhyRegFile1/PhyRegFile1/we5_i (REG_FILE_32_SRAM_DEPTH32_SRAM_INDEX5_SRAM_WIDTH32_1)
+                                                          0.00      14.24 f
+  PhyRegFile1/PhyRegFile1/U9/ZN (INVX0)                   0.57      14.81 r
+  PhyRegFile1/PhyRegFile1/U2/QN (NOR2X0)                  0.76      15.58 f
+  PhyRegFile1/PhyRegFile1/PhyRegFile1/we5_i (SRAM_12R6W_CONFIG_SRAM_DEPTH16_SRAM_INDEX4_SRAM_WIDTH32_1)
+                                                          0.00      15.58 f
+  PhyRegFile1/PhyRegFile1/PhyRegFile1/U6926/ZN (INVX0)
+                                                          0.60      16.17 r
+  PhyRegFile1/PhyRegFile1/PhyRegFile1/U6925/QN (NOR2X0)
+                                                          0.68      16.85 f
+  PhyRegFile1/PhyRegFile1/PhyRegFile1/U6923/Q (AND2X1)
+                                                          0.71      17.57 f
+  PhyRegFile1/PhyRegFile1/PhyRegFile1/U6921/Q (AND2X1)
+                                                          0.59      18.16 f
+  PhyRegFile1/PhyRegFile1/PhyRegFile1/U6919/QN (NAND2X0)
+                                                          0.82      18.98 r
+  PhyRegFile1/PhyRegFile1/PhyRegFile1/U4021/ZN (INVX0)
+                                                          3.28      22.26 f
+  PhyRegFile1/PhyRegFile1/PhyRegFile1/decoded_addr5wr_o[0] (SRAM_12R6W_CONFIG_SRAM_DEPTH16_SRAM_INDEX4_SRAM_WIDTH32_1)
+                                                          0.00      22.26 f
+  PhyRegFile1/PhyRegFile1/U176/Q (AND2X1)                 0.48      22.75 f
+  PhyRegFile1/PhyRegFile1/decoded_addr5wr_o[16] (REG_FILE_32_SRAM_DEPTH32_SRAM_INDEX5_SRAM_WIDTH32_1)
+                                                          0.00      22.75 f
+  PhyRegFile1/U301/Q (AND2X1)                             0.50      23.25 f
+  PhyRegFile1/decoded_addr5wr_o[48] (REG_FILE_64_SRAM_DEPTH64_SRAM_INDEX6_SRAM_WIDTH32_1)
+                                                          0.00      23.25 f
+  U3441/Q (AND2X1)                                        0.54      23.79 f
+  decoded_addr5wr_o[112] (out)                            0.00      23.79 f
+  data arrival time                                                 23.79
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

@@ -14,7 +14,7 @@
 
 `timescale 1ns/100ps
 
-module REG_FILE_128(
+module REG_FILE_32(
 	clk,
 	reset,
 

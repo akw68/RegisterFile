@@ -187,15 +187,15 @@ integer i,j;
 always @(posedge clk)
 begin
 
-	if(reset == 1'b1)
-	begin
-		for(i=`SIZE_RMT; i<SRAM_DEPTH; i=i+1)
-		begin
-			sram[i] <= 0;
-		end
-	end
-	else
-	begin
+	//if(reset == 1'b1)
+	//begin
+	//	for(i=34; i<SRAM_DEPTH; i=i+1)
+	//	begin
+	//		sram[i] <= 0;
+	//	end
+	//end
+	//else
+	//begin
 		if(we0_i == 1'b1)
 		begin
 			sram[addr0wr_i] <= data0wr_i;
@@ -226,7 +226,7 @@ begin
 			sram[addr5wr_i] <= data5wr_i;
 		end
 
-	end
+	//end
 end
 
 endmodule
